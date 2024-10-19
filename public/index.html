@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Player's Score</h1>
+        <br>
+
+        <!-- Dropdown to select player and input field in a single line -->
+        <div class="form-group row">
+            <label for="playerSelect" class="col-sm-2 col-form-label">Select Player:</label>
+            <div class="col-sm-3">
+                <select class="form-control" id="playerSelect">
+                    <!-- Options will be populated dynamically -->
+                     <option value>Select Player</option>
+                </select>
+            </div>
+
+            <label for="scoreInput" class="col-sm-2 col-form-label">Update Score:</label>
+            <div class="col-sm-3">
+                <input type="number" class="form-control" id="scoreInput" placeholder="Enter new score" min="0" max="100">
+            </div>
+
+            <div class="col-sm-2">
+                <button class="btn btn-primary" id="updateScoreBtn">Update Score</button>
+            </div>
+            <!-- Button to update score -->
+        </div>
+
+
+        <h1 class="mt-5">Real-Time Leaderboard</h1>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="playerTableBody">
+                <!-- Player data will be populated dynamically -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
